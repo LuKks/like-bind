@@ -92,6 +92,8 @@ test('force close', async function (t) {
   const socket = new net.Socket()
   const socketClosing = new Promise(resolve => socket.on('close', resolve))
 
+  socket.on('error', noop)
+
   await bind.connect(socket, server.address().port)
   t.ok(socket.remoteAddress)
 
@@ -101,3 +103,5 @@ test('force close', async function (t) {
   await socketClosing
   t.ok(socket.destroyed)
 })
+
+function noop () {}
