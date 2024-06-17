@@ -36,20 +36,20 @@ async function udp (port, opts) {
 
 async function freePortTCP (port) {
   const server = net.createServer()
-  const close = await listen(server, port)
-  const addr = server.address()
+  await listen(server, port)
 
-  await close()
+  const addr = server.address()
+  await close(server)
 
   return addr.port
 }
 
 async function freePortUDP (port) {
   const socket = dgram.createSocket('udp4')
-  const close = await listen(socket, port)
-  const addr = socket.address()
+  await listen(socket, port)
 
-  await close()
+  const addr = socket.address()
+  await close(socket)
 
   return addr.port
 }
@@ -77,7 +77,7 @@ function listen (server, port, address, cb) {
 
         reject(err)
       } else {
-        resolve(close.bind(null, server))
+        resolve()
       }
     }
 
@@ -115,7 +115,7 @@ function connect (socket, port, address, cb) {
       socket.removeListener('error', done)
 
       if (err) reject(err)
-      else resolve(close.bind(null, socket))
+      else resolve()
     }
   })
 }

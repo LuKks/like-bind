@@ -11,7 +11,7 @@ test('tcp', async function (t) {
   t.is(port2, 12345)
 
   const server = net.createServer()
-  const closeServer = await bind.listen(server, port2)
+  await bind.listen(server, port2)
 
   const port3 = await bind.free.tcp(12345)
   t.not(port3, 12345)
@@ -23,7 +23,7 @@ test('tcp', async function (t) {
     t.pass()
   }
 
-  await closeServer()
+  await bind.close(server)
 })
 
 test('udp', async function (t) {
@@ -34,7 +34,7 @@ test('udp', async function (t) {
   t.is(port2, 12345)
 
   const socket = dgram.createSocket('udp4')
-  const closeSocket = await bind.listen(socket, port2)
+  await bind.listen(socket, port2)
 
   const port3 = await bind.free.udp(12345)
   t.not(port3, 12345)
@@ -46,7 +46,7 @@ test('udp', async function (t) {
     t.pass()
   }
 
-  await closeSocket()
+  await bind.close(socket)
 })
 
 test('listen server', async function (t) {
