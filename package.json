@@ -1,6 +1,6 @@
 {
   "name": "like-bind",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Async listen, connect, and close servers or sockets on ideal ports",
   "main": "index.js",
   "files": [],
