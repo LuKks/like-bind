@@ -50,7 +50,7 @@ Available `options`
 
 #### `await bind.listen(serverOrSocket[, port, address, cb])`
 
-Async listen a server.
+Async listen a server or socket.
 
 #### `await bind.connect(socket[, port, address, cb])`
 
