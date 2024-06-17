@@ -1,5 +1,5 @@
 {
-  "name": "tiny-bind",
+  "name": "like-bind",
   "version": "0.0.0",
   "description": "Async listen, connect, and close servers or sockets on ideal ports",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lukks/tiny-bind.git"
+    "url": "git+https://github.com/lukks/like-bind.git"
   },
   "author": "Lucas Barrena (LuKks)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lukks/tiny-bind/issues"
+    "url": "https://github.com/lukks/like-bind/issues"
   },
-  "homepage": "https://github.com/lukks/tiny-bind#readme",
+  "homepage": "https://github.com/lukks/like-bind#readme",
   "devDependencies": {
     "brittle": "^3.3.2",
     "standard": "^17.1.0"

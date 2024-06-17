@@ -1,15 +1,15 @@
-# tiny-bind
+# like-bind
 
 Async listen, connect, and close servers or sockets on ideal ports
 
 ```
-npm i tiny-bind
+npm i like-bind
 ```
 
 ## Usage
 
 ```js
-const bind = require('tiny-bind')
+const bind = require('like-bind')
 
 const server = net.createServer()
 const port = await bind.free.tcp(1337)
